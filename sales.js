@@ -26,19 +26,25 @@ var finalArrayB1 = [];
 var finalArrayB1 = [];
 var finalArrayB1 = [];
 
-function assigneValues(values, branchdiv) {
+function assigneValues(branch, branchdiv) {
+  var h3 = document.createElement("h3");
+  var h3Text = document.createTextNode(branch.name);
+  h3.appendChild(h3Text);
+  branchdiv.appendChild(h3);
   var sum = 0;
   var ul = document.createElement("ul");
-  for (var i = 0; i < values.length; i++) {
+  for (var i = 0; i < branch.numberOfCostumers.length; i++) {
     var li = document.createElement("li");
     var text = document.createTextNode(
-      `${houersArray[i]} : ${values[i]} cookies`
+      `${houersArray[i]} : ${branch.numberOfCostumers[i]} cookies`
     );
     li.appendChild(text);
     ul.appendChild(li);
-    sum += values[i];
+    sum += branch.numberOfCostumers[i];
   }
-  var li = document.createTextNode(`Total : ${sum} cookies`);
+  var text = document.createTextNode(`Total : ${sum} cookies`);
+  var li = document.createElement("li");
+  li.appendChild(text);
   ul.appendChild(li);
   branchdiv.appendChild(ul);
 }
@@ -75,7 +81,7 @@ var branch1 = {
     return (total / this.numberOfCostumers.length).toFixed(2);
   },
 };
-assigneValues(branch1.numberOfCostumers, bracnh1div);
+assigneValues(branch1, bracnh1div);
 
 var branch2 = {
   name: "Zarqa",
@@ -94,7 +100,7 @@ var branch2 = {
     return (total / this.numberOfCostumers.length).toFixed(2);
   },
 };
-assigneValues(branch2.numberOfCostumers, bracnh2div);
+assigneValues(branch2, bracnh2div);
 
 var branch3 = {
   name: "Irbid",
@@ -113,4 +119,4 @@ var branch3 = {
     return (total / this.numberOfCostumers.length).toFixed(2);
   },
 };
-assigneValues(branch3.numberOfCostumers, bracnh3div);
+assigneValues(branch3, bracnh3div);
