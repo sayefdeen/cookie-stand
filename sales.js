@@ -1,10 +1,14 @@
 var bracnh1div = document.getElementById("branch1");
 var bracnh2div = document.getElementById("branch2");
 var bracnh3div = document.getElementById("branch3");
+var bracnh4div = document.getElementById("branch4");
+var bracnh5div = document.getElementById("branch5");
 
 var branch1Costumers = [];
 var branch2Costumers = [];
 var branch3Costumers = [];
+var branch4Costumers = [];
+var branch5Costumers = [];
 var houersArray = [
   "6am",
   "7am",
@@ -21,10 +25,6 @@ var houersArray = [
   "6pm",
   "7pm",
 ];
-
-var finalArrayB1 = [];
-var finalArrayB1 = [];
-var finalArrayB1 = [];
 
 function assigneValues(branch, branchdiv) {
   var h3 = document.createElement("h3");
@@ -61,11 +61,13 @@ function generateNumbers() {
     branch1Costumers.push(randomNumber());
     branch2Costumers.push(randomNumber());
     branch3Costumers.push(randomNumber());
+    branch4Costumers.push(randomNumber());
+    branch5Costumers.push(randomNumber());
   }
 }
 
 var branch1 = {
-  name: "Amman",
+  name: "Seattle",
   numberOfCostumers: branch1Costumers,
   maxNumber: function () {
     return Math.max.apply(null, this.numberOfCostumers);
@@ -84,7 +86,7 @@ var branch1 = {
 assigneValues(branch1, bracnh1div);
 
 var branch2 = {
-  name: "Zarqa",
+  name: "Tokyo",
   numberOfCostumers: branch2Costumers,
   maxNumber: function () {
     return Math.max.apply(null, this.numberOfCostumers);
@@ -103,7 +105,7 @@ var branch2 = {
 assigneValues(branch2, bracnh2div);
 
 var branch3 = {
-  name: "Irbid",
+  name: "Dubai",
   numberOfCostumers: branch3Costumers,
   maxNumber: function () {
     return Math.max.apply(null, this.numberOfCostumers);
@@ -120,3 +122,39 @@ var branch3 = {
   },
 };
 assigneValues(branch3, bracnh3div);
+var branch4 = {
+  name: "Paris",
+  numberOfCostumers: branch3Costumers,
+  maxNumber: function () {
+    return Math.max.apply(null, this.numberOfCostumers);
+  },
+  minNumber: function () {
+    return Math.min.apply(null, this.numberOfCostumers);
+  },
+  averageSale: function () {
+    var total = 0;
+    for (var i = 0; i < this.numberOfCostumers.length; i++) {
+      total += this.numberOfCostumers[i];
+    }
+    return (total / this.numberOfCostumers.length).toFixed(2);
+  },
+};
+assigneValues(branch4, bracnh4div);
+var branch5 = {
+  name: "Lima",
+  numberOfCostumers: branch3Costumers,
+  maxNumber: function () {
+    return Math.max.apply(null, this.numberOfCostumers);
+  },
+  minNumber: function () {
+    return Math.min.apply(null, this.numberOfCostumers);
+  },
+  averageSale: function () {
+    var total = 0;
+    for (var i = 0; i < this.numberOfCostumers.length; i++) {
+      total += this.numberOfCostumers[i];
+    }
+    return (total / this.numberOfCostumers.length).toFixed(2);
+  },
+};
+assigneValues(branch5, bracnh5div);
