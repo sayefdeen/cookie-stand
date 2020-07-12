@@ -1,0 +1,36 @@
+body {
+  background-color: gray;
+}
+
+h1 {
+  text-transform: capitalize;
+  text-align: center;
+  text-decoration: underline;
+}
+ul {
+  border: black 2px dashed;
+}
+ul li {
+  line-height: 1.5;
+  text-justify: auto;
+  font-size: 20px;
+  margin: 15px;
+}
+
+ul li:last-child {
+  border: deeppink 1px solid;
+}
+
+#sales-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+  border: 1px solid black;
+  font-size: 25px;
+}
