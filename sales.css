@@ -1,20 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   background-color: gray;
 }
 
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+#navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#navbar a:hover {
+  background-color: blue;
+}
+.show {
+  display: block;
+}
 h1 {
   text-transform: capitalize;
   text-align: center;
   text-decoration: underline;
+  padding: 15px;
+  margin: 25px;
 }
-ul {
-  border: black 2px dashed;
+.border {
+  border: 2px dashed blue;
 }
 ul li {
   line-height: 1.5;
   text-justify: auto;
   font-size: 20px;
-  margin: 15px;
+  margin: 25px;
 }
 
 ul li:last-child {
@@ -33,4 +63,6 @@ h3 {
   text-align: center;
   border: 1px solid black;
   font-size: 25px;
+
+  margin: 15px;
 }
