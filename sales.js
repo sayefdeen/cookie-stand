@@ -1,3 +1,7 @@
+var bracnh1div = document.getElementById("branch1");
+var bracnh2div = document.getElementById("branch2");
+var bracnh3div = document.getElementById("branch3");
+
 var branch1Costumers = [];
 var branch2Costumers = [];
 var branch3Costumers = [];
@@ -17,6 +21,27 @@ var houersArray = [
   "6pm",
   "7pm",
 ];
+
+var finalArrayB1 = [];
+var finalArrayB1 = [];
+var finalArrayB1 = [];
+
+function assigneValues(values, branchdiv) {
+  var sum = 0;
+  var ul = document.createElement("ul");
+  for (var i = 0; i < values.length; i++) {
+    var li = document.createElement("li");
+    var text = document.createTextNode(
+      `${houersArray[i]} : ${values[i]} cookies`
+    );
+    li.appendChild(text);
+    ul.appendChild(li);
+    sum += values[i];
+  }
+  var li = document.createTextNode(`Total : ${sum} cookies`);
+  ul.appendChild(li);
+  branchdiv.appendChild(ul);
+}
 generateNumbers();
 
 function randomNumber() {
@@ -50,6 +75,7 @@ var branch1 = {
     return (total / this.numberOfCostumers.length).toFixed(2);
   },
 };
+assigneValues(branch1.numberOfCostumers, bracnh1div);
 
 var branch2 = {
   name: "Zarqa",
@@ -68,6 +94,7 @@ var branch2 = {
     return (total / this.numberOfCostumers.length).toFixed(2);
   },
 };
+assigneValues(branch2.numberOfCostumers, bracnh2div);
 
 var branch3 = {
   name: "Irbid",
@@ -86,3 +113,4 @@ var branch3 = {
     return (total / this.numberOfCostumers.length).toFixed(2);
   },
 };
+assigneValues(branch3.numberOfCostumers, bracnh3div);
