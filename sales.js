@@ -117,14 +117,34 @@ function assigneValues1() {
   title.textContent = "Branches Names";
   newRow.appendChild(title);
   createTable.appendChild(newRow);
-  console.log(arrayOfObjects.length);
   for (var i = 0; i < houersArray.length; i++) {
     var tableHead = document.createElement("th");
     var headText = document.createTextNode(`${houersArray[i]}`);
     tableHead.appendChild(headText);
     newRow.appendChild(tableHead);
   }
+  var total = document.createElement("th");
+  total.textContent = "Daily Location Total";
+  newRow.appendChild(total);
   createTable.appendChild(newRow);
+  // assigne table content.
+  for (var i = 0; i < arrayOfObjects.length; i++) {
+    var row = document.createElement("tr");
+    var data = document.createElement("td");
+    data.textContent = arrayOfObjects[i].name;
+    row.appendChild(data);
+    var sum = 0;
+    for (var j = 0; j < arrayOfObjects[0].numberOfCostumers.length; j++) {
+      var content = document.createElement("td");
+      content.textContent = arrayOfObjects[i].numberOfCostumers[j];
+      row.appendChild(content);
+      sum += arrayOfObjects[i].numberOfCostumers[j];
+    }
+    var sumResult = document.createElement("td");
+    sumResult.textContent = sum;
+    row.appendChild(sumResult);
+    createTable.appendChild(row);
+  }
   brancheTable.appendChild(createTable);
 }
 assigneValues1();
