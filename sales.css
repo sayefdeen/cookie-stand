@@ -71,3 +71,15 @@ table {
   width: 50%;
   text-align: center;
 }
+
+th,
+td {
+  padding: 5px;
+}
+
+th {
+  background-color: yellow;
+}
+td:first-child {
+  background-color: rebeccapurple;
+}
