@@ -7,6 +7,7 @@ var bracnh3div = document.getElementById("branch3");
 var bracnh4div = document.getElementById("branch4");
 var bracnh5div = document.getElementById("branch5");
 var brancheTable = document.getElementById("sales-table");
+
 // Selectors Ends
 // Arrays Start
 var branch1Costumers = [];
@@ -119,6 +120,26 @@ function assigneValues1() {
     row.appendChild(sumResult);
     createTable.appendChild(row);
   }
+  // assigne total values
+  var totalRow = document.createElement("tr");
+  var total = document.createElement("td");
+  total.textContent = "Total";
+  totalRow.appendChild(total);
+  var totalNumber = 0;
+  for (var i = 0; i < houersArray.length; i++) {
+    var numberOfCookies = 0;
+    var content = document.createElement("td");
+    for (var j = 0; j < arrayOfObjects.length; j++) {
+      numberOfCookies += arrayOfObjects[j].numberOfCostumers[i];
+    }
+    totalNumber += numberOfCookies;
+    content.textContent = numberOfCookies;
+    totalRow.appendChild(content);
+  }
+  var finalnumber = document.createElement("td");
+  finalnumber.textContent = totalNumber;
+  totalRow.appendChild(finalnumber);
+  createTable.appendChild(totalRow);
   brancheTable.appendChild(createTable);
 }
 assigneValues1();
