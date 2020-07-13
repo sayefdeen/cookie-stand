@@ -94,19 +94,19 @@ Branches.prototype.averageSale = function () {
   return (total / this.numberOfCostumers.length).toFixed(2);
 };
 var branch1 = new Branches("Seattle", branch1Costumers);
-assigneValues(branch1, bracnh1div);
+
 arrayOfObjects.push(branch1);
 var branch2 = new Branches("Tokyo", branch2Costumers);
-assigneValues(branch2, bracnh2div);
+
 arrayOfObjects.push(branch2);
 var branch3 = new Branches("Dubai", branch3Costumers);
-assigneValues(branch3, bracnh3div);
+
 arrayOfObjects.push(branch3);
 var branch4 = new Branches("Paris", branch4Costumers);
-assigneValues(branch4, bracnh4div);
+
 arrayOfObjects.push(branch4);
 var branch5 = new Branches("Lima", branch5Costumers);
-assigneValues(branch5, bracnh5div);
+
 arrayOfObjects.push(branch5);
 
 function assigneValues1() {
