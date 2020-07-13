@@ -33,28 +33,7 @@ var houersArray = [
 ];
 // Arrays Ends
 // Functions Starts
-function assigneValues(branch, branchdiv) {
-  var h3 = document.createElement("h3");
-  var h3Text = document.createTextNode(branch.name);
-  h3.appendChild(h3Text);
-  branchdiv.appendChild(h3);
-  var sum = 0;
-  var ul = document.createElement("ul");
-  for (var i = 0; i < branch.numberOfCostumers.length; i++) {
-    var li = document.createElement("li");
-    var text = document.createTextNode(
-      `${houersArray[i]} : ${branch.numberOfCostumers[i]} cookies`
-    );
-    li.appendChild(text);
-    ul.appendChild(li);
-    sum += branch.numberOfCostumers[i];
-  }
-  var text = document.createTextNode(`Total : ${sum} cookies`);
-  var li = document.createElement("li");
-  li.appendChild(text);
-  ul.appendChild(li);
-  branchdiv.appendChild(ul);
-}
+
 generateNumbers();
 
 function randomNumber() {
@@ -94,19 +73,14 @@ Branches.prototype.averageSale = function () {
   return (total / this.numberOfCostumers.length).toFixed(2);
 };
 var branch1 = new Branches("Seattle", branch1Costumers);
-
 arrayOfObjects.push(branch1);
 var branch2 = new Branches("Tokyo", branch2Costumers);
-
 arrayOfObjects.push(branch2);
 var branch3 = new Branches("Dubai", branch3Costumers);
-
 arrayOfObjects.push(branch3);
 var branch4 = new Branches("Paris", branch4Costumers);
-
 arrayOfObjects.push(branch4);
 var branch5 = new Branches("Lima", branch5Costumers);
-
 arrayOfObjects.push(branch5);
 
 function assigneValues1() {
