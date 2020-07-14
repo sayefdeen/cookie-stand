@@ -1,12 +1,9 @@
 "use strict";
 
 // Selectors Start
-var bracnh1div = document.getElementById("branch1");
-var bracnh2div = document.getElementById("branch2");
-var bracnh3div = document.getElementById("branch3");
-var bracnh4div = document.getElementById("branch4");
-var bracnh5div = document.getElementById("branch5");
 var brancheTable = document.getElementById("sales-table");
+var openingHours = document.getElementsByClassName("content");
+console.log(openingHours[0]);
 
 // Selectors Ends
 // Arrays Start
