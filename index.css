@@ -51,11 +51,26 @@ p {
   color: blue;
 }
 
-#img-container {
+.container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
+}
+.margin {
+  margin: 15px;
+}
+.img-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: solid black 1px;
+}
+.img-content img {
+  margin: 15px;
+  border: orange 5px solid;
+  width: 100%;
+  height: 100%;
 }
 
 .branch {
