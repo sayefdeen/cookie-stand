@@ -20,28 +20,43 @@
     </div>
     <h1>Welcome To our Cookies Shop</h1>
     <div>
-      <p>We have many types of delicious cookies</p>
+      <p>Our branches</p>
       <div id="img-container">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQa4euLwQsORieTDO36QHwq6JO3T33zMErmfA&usqp=CAU"
-          alt=""
-        />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS99CI3iVU0Le006W8N1rI2Ce4oKpxbFIj2Ug&usqp=CAU"
-          alt=""
-        />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsA-oZyTLWyu9b9P4LkbsuPOB0lxdsQs6T9g&usqp=CAU"
-          alt=""
-        />
-        <img
-          src="https://www.twosisterscrafting.com/wp-content/uploads/2016/05/red-white-blue-chocolate-cookies-pinnable4-735x1103.jpg"
-          alt=""
-        />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSH3aayYjSIE-UmRkZ1Z2JrP_orhVF8xzRhQ&usqp=CAU"
-          alt=""
-        />
+        <div class="branch">
+          <img src="img/Seattle.jpg" alt="" />
+          <div class="content">
+            <p>Seattle</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Tokyo.jpg" alt="" />
+          <div class="content">
+            <p>Tokyo</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Dubai.jpg" alt="" />
+          <div class="content">
+            <p>Dubai</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Paris.jpg" alt="" />
+          <div class="content">
+            <p>Paris</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Lima.jpg" alt="" />
+          <div class="content">
+            <p>Lima</p>
+            <p></p>
+          </div>
+        </div>
       </div>
       <p>you can always go to our sales page to see how much we sell</p>
       <p>
@@ -56,5 +71,32 @@
         ></a>
       </p>
     </footer>
+    <script>
+      var openingHours = document.getElementsByClassName("content");
+      console.log(openingHours[0].children[1]);
+      console.log(openingHours.length);
+      var houersArray = [
+        "6am",
+        "7am",
+        "8am",
+        "9am",
+        "10am",
+        "11am",
+        "12pm",
+        "1pm",
+        "2pm",
+        "3pm",
+        "4pm",
+        "5pm",
+        "6pm",
+        "7pm",
+        "8pm",
+      ];
+      for (var i = 0; i < openingHours.length; i++) {
+        openingHours[i].children[1].textContent = `Opening Hours are ${
+          houersArray[0]
+        } to ${houersArray[houersArray.length - 1]}`;
+      }
+    </script>
   </body>
 </html>
