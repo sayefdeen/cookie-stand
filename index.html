@@ -17,6 +17,14 @@
     <div id="navbar">
       <a href="index.html">Home</a>
       <a href="sales.html">Sales</a>
+      <div id="display">
+        <label for="option">Try New display</label>
+        <select name="option" id="option" class="margin">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+        <input class="margin" type="submit" value="Click to apply" />
+      </div>
     </div>
     <h1>Welcome To our Cookies Shop</h1>
     <div>
@@ -89,7 +97,7 @@
         </div>
       </div>
       <div class="margin">
-        <p>Fishes Types</p>
+        <p>Family Friendly</p>
         <div class="img-content">
           <img src="img/family.jpg" alt="chinook-fish" title="Chinook Fish" />
           <img src="img/shirt.jpg" alt="salmon" title="Salmon Fish" />
@@ -107,8 +115,6 @@
     </footer>
     <script>
       var openingHours = document.getElementsByClassName("content");
-      console.log(openingHours[0].children[1]);
-      console.log(openingHours.length);
       var houersArray = [
         "6am",
         "7am",
@@ -131,6 +137,19 @@
           houersArray[0]
         } to ${houersArray[houersArray.length - 1]}`;
       }
+      // Theme
+      // var selectOption = document.getElementById("option");
+      // var strUser = selectOption.options[selectOption.selectedIndex].value;
+      // var bodySelection = document.getElementsByTagName("body");
+      // var btn = document.querySelector('input[type="submit"]');
+      // btn.addEventListener("click", function (event) {
+      //   event.preventDefault;
+      //   // if(selectOption[0].options.value)
+      //   console.log(strUser);
+      // });
+      // selectOption.addEventListener("change", function () {
+      //   console.log(strUser);
+      // });
     </script>
   </body>
 </html>
