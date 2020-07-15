@@ -9,12 +9,27 @@ console.group(formSelection[0].length);
 var submit = document.querySelector('input[type="submit"]');
 
 submit.addEventListener("click", function (event) {
+  event.preventDefault();
   var selectTable = document.getElementsByTagName("table");
   var branchName = formSelection[0][1].value;
   var maxSales = formSelection[0][2].value;
   var minSales = formSelection[0][3].value;
   var averageSales = formSelection[0][4].value;
-  var newBranch = new Branches(branchName, maxSales, minSales, averageSales);
+  console.log(arrayOfObjects.length);
+  var alreadyHere = false;
+  for (var i = 0; i < arrayOfObjects.length; i++) {
+    if (branchName.toLowerCase() === arrayOfObjects[i].name.toLowerCase()) {
+      alert(`${arrayOfObjects[i].name} already exist as a branch`);
+      alreadyHere = true;
+      break;
+    }
+  }
+  if (!alreadyHere) {
+    var newBranch = new Branches(branchName, maxSales, minSales, averageSales);
+    arrayOfObjects.push(newBranch);
+    selectTable[0].innerHTML = " ";
+    renderTable();
+  }
 });
 
 // Selectors Ends

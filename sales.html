@@ -34,7 +34,7 @@
               name="max-number"
               placeholder="Maximum sales if cookie"
               required
-              pattern="[\d]"
+              pattern="\d*"
             />
             <label for="min-number">Branch Min Sales : </label>
             <input
@@ -43,7 +43,7 @@
               name="min-number"
               placeholder="Minimun sales if cookie"
               required
-              pattern="[\d]"
+              pattern="\d*"
             />
             <label for="average-number">Branch Average Sales : </label>
             <input
@@ -52,7 +52,7 @@
               name="average-number"
               placeholder="Average sales if cookie"
               required
-              pattern="[\d]"
+              pattern="[0-9]+([\.,][0-9]+)?"
             />
             <input type="submit" value="Add a branch" />
           </fieldset>
