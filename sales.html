@@ -12,37 +12,44 @@
       <a href="sales.html">Sales</a>
     </div>
     <h1>Sales page of our cookie store</h1>
-    <div id="sales-table">
-      <!-- <table border="1">
-        <tr>
-          <th>Branches</th>
-          <th>6am</th>
-          <th>8am</th>
-          <th>9am</th>
-          <th>10am</th>
-        </tr>
-        <tr>
-          <td>Seattle</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Seattle</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Seattle</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-          <td>5</td>
-        </tr>
-      </table> -->
+    <div class="container">
+      <div id="sales-table"></div>
+      <div id="sales-form">
+        <form>
+          <fieldset>
+            <legend>Location Information</legend>
+            <label for="branch-name">Branch Name</label>
+            <input
+              type="text"
+              id="branch-name"
+              name="branch-name"
+              placeholder="Branch Name"
+            />
+            <label for="max-number">Branch Max Sales : </label>
+            <input
+              type="text"
+              id="max-number"
+              name="max-number"
+              placeholder="Maximum sales if cookie"
+            />
+            <label for="min-number">Branch Min Sales : </label>
+            <input
+              type="text"
+              id="min-number"
+              name="min-number"
+              placeholder="Minimun sales if cookie"
+            />
+            <label for="average-number">Branch Average Sales : </label>
+            <input
+              type="text"
+              id="average-number"
+              name="average-number"
+              placeholder="Average sales if cookie"
+            />
+            <input type="submit" value="Add a branch" />
+          </fieldset>
+        </form>
+      </div>
     </div>
     <script src="sales.js"></script>
   </body>
