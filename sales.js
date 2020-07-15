@@ -3,6 +3,7 @@
 // Selectors Start
 var brancheTable = document.getElementById("sales-table");
 var openingHours = document.getElementsByClassName("content");
+var createTable = document.createElement("table");
 console.log(openingHours[0]);
 
 // Selectors Ends
@@ -32,29 +33,14 @@ var houersArray = [
 // Arrays Ends
 // Functions Starts
 
-generateNumbers();
-
-function randomNumber() {
-  var min = 1;
-  var max = 200;
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function generateNumbers() {
-  for (var i = 0; i < houersArray.length; i++) {
-    branch1Costumers.push(randomNumber());
-    branch2Costumers.push(randomNumber());
-    branch3Costumers.push(randomNumber());
-    branch4Costumers.push(randomNumber());
-    branch5Costumers.push(randomNumber());
-  }
-}
-
 // functions ends
 
-function Branches(name, numberOfCostumers) {
+function Branches(name, numberOfCostumers, maxSales, minSales, averageSale) {
   this.name = name;
   this.numberOfCostumers = numberOfCostumers;
+  this.maxSales = maxSales;
+  this.minSales = minSales;
+  this.averageSale = averageSale;
 }
 
 Branches.prototype.maxNumber = function () {
@@ -70,19 +56,34 @@ Branches.prototype.averageSale = function () {
   }
   return (total / this.numberOfCostumers.length).toFixed(2);
 };
-var branch1 = new Branches("Seattle", branch1Costumers);
+var branch1 = new Branches("Seattle", branch1Costumers, 125, 5, 2.7);
 arrayOfObjects.push(branch1);
-var branch2 = new Branches("Tokyo", branch2Costumers);
+var branch2 = new Branches("Tokyo", branch2Costumers, 225, 25, 3.6);
 arrayOfObjects.push(branch2);
-var branch3 = new Branches("Dubai", branch3Costumers);
+var branch3 = new Branches("Dubai", branch3Costumers, 350, 100, 6.5);
 arrayOfObjects.push(branch3);
-var branch4 = new Branches("Paris", branch4Costumers);
+var branch4 = new Branches("Paris", branch4Costumers, 400, 10, 3.2);
 arrayOfObjects.push(branch4);
-var branch5 = new Branches("Lima", branch5Costumers);
+var branch5 = new Branches("Lima", branch5Costumers, 500, 60, 3.5);
 arrayOfObjects.push(branch5);
 
-function assigneValues1() {
-  var createTable = document.createElement("table");
+function generateNumbers() {
+  for (var i = 0; i < houersArray.length; i++) {
+    branch1Costumers.push(randomNumber(branch1));
+    branch2Costumers.push(randomNumber(branch2));
+    branch3Costumers.push(randomNumber(branch3));
+    branch4Costumers.push(randomNumber(branch4));
+    branch5Costumers.push(randomNumber(branch5));
+  }
+}
+function randomNumber(branch) {
+  var min = branch.minSales;
+  var max = branch.maxSales;
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+generateNumbers();
+
+function headerTimes() {
   createTable.setAttribute("border", "1");
   var newRow = document.createElement("tr");
   var title = document.createElement("th");
@@ -99,6 +100,9 @@ function assigneValues1() {
   total.textContent = "Daily Location Total";
   newRow.appendChild(total);
   createTable.appendChild(newRow);
+}
+
+function assigneValues1() {
   // assigne table content.
   for (var i = 0; i < arrayOfObjects.length; i++) {
     var row = document.createElement("tr");
@@ -118,6 +122,9 @@ function assigneValues1() {
     createTable.appendChild(row);
   }
   // assigne total values
+}
+
+function footerTotal() {
   var totalRow = document.createElement("tr");
   var total = document.createElement("td");
   total.textContent = "Total";
@@ -139,4 +146,11 @@ function assigneValues1() {
   createTable.appendChild(totalRow);
   brancheTable.appendChild(createTable);
 }
-assigneValues1();
+
+function renderTable() {
+  headerTimes();
+  assigneValues1();
+  footerTotal();
+}
+
+renderTable();
