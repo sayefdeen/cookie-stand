@@ -4,15 +4,21 @@
 var brancheTable = document.getElementById("sales-table");
 var openingHours = document.getElementsByClassName("content");
 var createTable = document.createElement("table");
-console.log(openingHours[0]);
+var formSelection = document.getElementsByTagName("form");
+console.group(formSelection[0].length);
+var submit = document.querySelector('input[type="submit"]');
+
+submit.addEventListener("click", function (event) {
+  var selectTable = document.getElementsByTagName("table");
+  var branchName = formSelection[0][1].value;
+  var maxSales = formSelection[0][2].value;
+  var minSales = formSelection[0][3].value;
+  var averageSales = formSelection[0][4].value;
+  var newBranch = new Branches(branchName, maxSales, minSales, averageSales);
+});
 
 // Selectors Ends
 // Arrays Start
-var branch1Costumers = [];
-var branch2Costumers = [];
-var branch3Costumers = [];
-var branch4Costumers = [];
-var branch5Costumers = [];
 var arrayOfObjects = [];
 var houersArray = [
   "6am",
@@ -33,11 +39,21 @@ var houersArray = [
 // Arrays Ends
 // Functions Starts
 
+function generateNumbers(max, min) {
+  var Array = [];
+  for (var i = 0; i < houersArray.length; i++) {
+    Array.push(randomNumber(max, min));
+  }
+  return Array;
+}
+function randomNumber(max, min) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 // functions ends
 
-function Branches(name, numberOfCostumers, maxSales, minSales, averageSale) {
+function Branches(name, maxSales, minSales, averageSale) {
   this.name = name;
-  this.numberOfCostumers = numberOfCostumers;
+  this.numberOfCostumers = generateNumbers(maxSales, minSales);
   this.maxSales = maxSales;
   this.minSales = minSales;
   this.averageSale = averageSale;
@@ -56,32 +72,16 @@ Branches.prototype.averageSale = function () {
   }
   return (total / this.numberOfCostumers.length).toFixed(2);
 };
-var branch1 = new Branches("Seattle", branch1Costumers, 125, 5, 2.7);
+var branch1 = new Branches("Seattle", 125, 5, 2.7);
 arrayOfObjects.push(branch1);
-var branch2 = new Branches("Tokyo", branch2Costumers, 225, 25, 3.6);
+var branch2 = new Branches("Tokyo", 225, 25, 3.6);
 arrayOfObjects.push(branch2);
-var branch3 = new Branches("Dubai", branch3Costumers, 350, 100, 6.5);
+var branch3 = new Branches("Dubai", 350, 100, 6.5);
 arrayOfObjects.push(branch3);
-var branch4 = new Branches("Paris", branch4Costumers, 400, 10, 3.2);
+var branch4 = new Branches("Paris", 400, 10, 3.2);
 arrayOfObjects.push(branch4);
-var branch5 = new Branches("Lima", branch5Costumers, 500, 60, 3.5);
+var branch5 = new Branches("Lima", 500, 60, 3.5);
 arrayOfObjects.push(branch5);
-
-function generateNumbers() {
-  for (var i = 0; i < houersArray.length; i++) {
-    branch1Costumers.push(randomNumber(branch1));
-    branch2Costumers.push(randomNumber(branch2));
-    branch3Costumers.push(randomNumber(branch3));
-    branch4Costumers.push(randomNumber(branch4));
-    branch5Costumers.push(randomNumber(branch5));
-  }
-}
-function randomNumber(branch) {
-  var min = branch.minSales;
-  var max = branch.maxSales;
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-generateNumbers();
 
 function headerTimes() {
   createTable.setAttribute("border", "1");
@@ -102,7 +102,7 @@ function headerTimes() {
   createTable.appendChild(newRow);
 }
 
-function assigneValues1() {
+function assigneValues() {
   // assigne table content.
   for (var i = 0; i < arrayOfObjects.length; i++) {
     var row = document.createElement("tr");
@@ -149,8 +149,7 @@ function footerTotal() {
 
 function renderTable() {
   headerTimes();
-  assigneValues1();
+  assigneValues();
   footerTotal();
 }
-
 renderTable();
