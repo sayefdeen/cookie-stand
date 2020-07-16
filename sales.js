@@ -15,7 +15,6 @@ submit.addEventListener("click", function (event) {
   var maxSales = formSelection[0][2].value;
   var minSales = formSelection[0][3].value;
   var averageSales = formSelection[0][4].value;
-  console.log(arrayOfObjects.length);
   var alreadyHere = false;
   for (var i = 0; i < arrayOfObjects.length; i++) {
     if (branchName.toLowerCase() === arrayOfObjects[i].name.toLowerCase()) {
@@ -26,7 +25,7 @@ submit.addEventListener("click", function (event) {
   }
   if (!alreadyHere) {
     var newBranch = new Branches(branchName, maxSales, minSales, averageSales);
-    arrayOfObjects.push(newBranch);
+    // arrayOfObjects.push(newBranch);
     selectTable[0].innerHTML = " ";
     renderTable();
   }
@@ -72,6 +71,7 @@ function Branches(name, maxSales, minSales, averageSale) {
   this.maxSales = maxSales;
   this.minSales = minSales;
   this.averageSale = averageSale;
+  arrayOfObjects.push(this);
 }
 
 Branches.prototype.maxNumber = function () {
@@ -88,15 +88,15 @@ Branches.prototype.averageSale = function () {
   return (total / this.numberOfCostumers.length).toFixed(2);
 };
 var branch1 = new Branches("Seattle", 125, 5, 2.7);
-arrayOfObjects.push(branch1);
+// arrayOfObjects.push(branch1);
 var branch2 = new Branches("Tokyo", 225, 25, 3.6);
-arrayOfObjects.push(branch2);
+// arrayOfObjects.push(branch2);
 var branch3 = new Branches("Dubai", 350, 100, 6.5);
-arrayOfObjects.push(branch3);
+// arrayOfObjects.push(branch3);
 var branch4 = new Branches("Paris", 400, 10, 3.2);
-arrayOfObjects.push(branch4);
+// arrayOfObjects.push(branch4);
 var branch5 = new Branches("Lima", 500, 60, 3.5);
-arrayOfObjects.push(branch5);
+// arrayOfObjects.push(branch5);
 
 function headerTimes() {
   createTable.setAttribute("border", "1");
