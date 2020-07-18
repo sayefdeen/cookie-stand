@@ -7,10 +7,10 @@ var createTable = document.createElement("table");
 var submit = document.querySelector("#location-form");
 
 submit.addEventListener("submit", function () {
-  console.log(event.target.branchname.value);
-  console.log(event.target.maxnumber.value);
-  console.log(event.target.minnumber.value);
-  console.log(event.target.averagenumber.value);
+  // console.log(event.target.branchname.value);
+  // console.log(event.target.maxnumber.value);
+  // console.log(event.target.minnumber.value);
+  // console.log(event.target.averagenumber.value);
   event.preventDefault();
   var selectTable = document.getElementsByTagName("table");
   var branchName = event.target.branchname.value;
