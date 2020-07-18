@@ -15,14 +15,14 @@
     <div class="container">
       <div id="sales-table"></div>
       <div id="sales-form">
-        <form>
+        <form id="location-form">
           <fieldset>
             <legend>Location Information</legend>
             <label for="branch-name">Branch Name</label>
             <input
               type="text"
               id="branch-name"
-              name="branch-name"
+              name="branchname"
               placeholder="Branch Name"
               required
               pattern="^[a-zA-Z ]*$"
@@ -31,7 +31,7 @@
             <input
               type="text"
               id="max-number"
-              name="max-number"
+              name="maxnumber"
               placeholder="Maximum sales if cookie"
               required
               pattern="\d*"
@@ -40,7 +40,7 @@
             <input
               type="text"
               id="min-number"
-              name="min-number"
+              name="minnumber"
               placeholder="Minimun sales if cookie"
               required
               pattern="\d*"
@@ -49,7 +49,7 @@
             <input
               type="text"
               id="average-number"
-              name="average-number"
+              name="averagenumber"
               placeholder="Average sales if cookie"
               required
               pattern="[0-9]+([\.,][0-9]+)?"

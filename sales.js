@@ -4,17 +4,19 @@
 var brancheTable = document.getElementById("sales-table");
 var openingHours = document.getElementsByClassName("content");
 var createTable = document.createElement("table");
-var formSelection = document.getElementsByTagName("form");
-console.group(formSelection[0].length);
-var submit = document.querySelector('input[type="submit"]');
+var submit = document.querySelector("#location-form");
 
-submit.addEventListener("click", function (event) {
+submit.addEventListener("submit", function () {
+  console.log(event.target.branchname.value);
+  console.log(event.target.maxnumber.value);
+  console.log(event.target.minnumber.value);
+  console.log(event.target.averagenumber.value);
   event.preventDefault();
   var selectTable = document.getElementsByTagName("table");
-  var branchName = formSelection[0][1].value;
-  var maxSales = formSelection[0][2].value;
-  var minSales = formSelection[0][3].value;
-  var averageSales = formSelection[0][4].value;
+  var branchName = event.target.branchname.value;
+  var maxSales = event.target.maxnumber.value;
+  var minSales = event.target.minnumber.value;
+  var averageSales = event.target.averagenumber.value;
   var alreadyHere = false;
   for (var i = 0; i < arrayOfObjects.length; i++) {
     if (branchName.toLowerCase() === arrayOfObjects[i].name.toLowerCase()) {
