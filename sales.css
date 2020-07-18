@@ -51,12 +51,53 @@ ul li:last-child {
   border: deeppink 1px solid;
 }
 
-#sales-container {
-  width: 75%;
+.container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#sales-table {
+  margin: 15px;
+}
+
+#sales-form {
+  margin: 15px;
+  width: 50%;
+}
+
+#sales-form input[type="submit"] {
+  background-color: violet;
+  width: 25%;
+  display: block;
+  margin: 10px auto;
+}
+
+#sales-form fieldset {
+  width: 50%;
   margin: 0 auto;
+}
+#sales-form legend {
+  font-size: 25px;
+  background-color: #000000;
+  color: white;
+}
+
+#sales-form input {
+  width: 50%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#sales-form label {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0;
+  display: inline-block;
 }
 
 h3 {
@@ -65,4 +106,21 @@ h3 {
   font-size: 25px;
 
   margin: 15px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+th {
+  background-color: yellow;
+}
+td:first-child {
+  background-color: rebeccapurple;
 }

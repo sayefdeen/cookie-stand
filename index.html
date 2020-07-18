@@ -17,37 +17,94 @@
     <div id="navbar">
       <a href="index.html">Home</a>
       <a href="sales.html">Sales</a>
+      <div id="display">
+        <label for="option">Try New display</label>
+        <select name="option" id="option" class="margin">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+        <input class="margin" type="submit" value="Click to apply" />
+      </div>
     </div>
     <h1>Welcome To our Cookies Shop</h1>
     <div>
-      <p>We have many types of delicious cookies</p>
-      <div id="img-container">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQa4euLwQsORieTDO36QHwq6JO3T33zMErmfA&usqp=CAU"
-          alt=""
-        />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS99CI3iVU0Le006W8N1rI2Ce4oKpxbFIj2Ug&usqp=CAU"
-          alt=""
-        />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsA-oZyTLWyu9b9P4LkbsuPOB0lxdsQs6T9g&usqp=CAU"
-          alt=""
-        />
-        <img
-          src="https://www.twosisterscrafting.com/wp-content/uploads/2016/05/red-white-blue-chocolate-cookies-pinnable4-735x1103.jpg"
-          alt=""
-        />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSH3aayYjSIE-UmRkZ1Z2JrP_orhVF8xzRhQ&usqp=CAU"
-          alt=""
-        />
+      <p>Our branches</p>
+      <div class="container">
+        <div class="branch">
+          <img src="img/Seattle.jpg" alt="" />
+          <div class="content">
+            <p>Seattle</p>
+            <p></p>
+            <p>Please Call (962)778777952</p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Tokyo.jpg" alt="" />
+          <div class="content">
+            <p>Tokyo</p>
+            <p></p>
+            <p>Please Call (962)778777952</p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Dubai.jpg" alt="" />
+          <div class="content">
+            <p>Dubai</p>
+            <p></p>
+            <p>Please Call (962)778777952</p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Paris.jpg" alt="" />
+          <div class="content">
+            <p>Paris</p>
+            <p></p>
+            <p>Please Call (962)778777952</p>
+          </div>
+        </div>
+        <div class="branch">
+          <img src="img/Lima.jpg" alt="" />
+          <div class="content">
+            <p>Lima</p>
+            <p></p>
+            <p>Please Call (962)778777952</p>
+          </div>
+        </div>
       </div>
-      <p>you can always go to our sales page to see how much we sell</p>
-      <p>
-        In the future you can click in each picture to see a recipe for each one
-      </p>
     </div>
+    <div class="container">
+      <div class="margin">
+        <p>Cookies</p>
+        <div class="img-content">
+          <img
+            src="img/cutter.jpeg"
+            alt="Cuttter peice"
+            title="Cutter used for the Cookies"
+          />
+          <img
+            src="img/frosted-cookie.jpg"
+            alt="frosted-cookie"
+            title="Frosted Cookie"
+          />
+          <img src="img/fish.jpg" alt="fish cookie" title="Fish Cookie" />
+        </div>
+      </div>
+      <div class="margin">
+        <p>Fishes Types</p>
+        <div class="img-content">
+          <img src="img/chinook.jpg" alt="chinook-fish" title="Chinook Fish" />
+          <img src="img/salmon.png" alt="salmon" title="Salmon Fish" />
+        </div>
+      </div>
+      <div class="margin">
+        <p>Family Friendly</p>
+        <div class="img-content">
+          <img src="img/family.jpg" alt="chinook-fish" title="Chinook Fish" />
+          <img src="img/shirt.jpg" alt="salmon" title="Salmon Fish" />
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>
         Done By <em>Saif</em> &copy;
@@ -56,5 +113,43 @@
         ></a>
       </p>
     </footer>
+    <script>
+      var openingHours = document.getElementsByClassName("content");
+      var houersArray = [
+        "6am",
+        "7am",
+        "8am",
+        "9am",
+        "10am",
+        "11am",
+        "12pm",
+        "1pm",
+        "2pm",
+        "3pm",
+        "4pm",
+        "5pm",
+        "6pm",
+        "7pm",
+        "8pm",
+      ];
+      for (var i = 0; i < openingHours.length; i++) {
+        openingHours[i].children[1].textContent = `Opening Hours are ${
+          houersArray[0]
+        } to ${houersArray[houersArray.length - 1]}`;
+      }
+      // Theme
+      // var selectOption = document.getElementById("option");
+      // var strUser = selectOption.options[selectOption.selectedIndex].value;
+      // var bodySelection = document.getElementsByTagName("body");
+      // var btn = document.querySelector('input[type="submit"]');
+      // btn.addEventListener("click", function (event) {
+      //   event.preventDefault;
+      //   // if(selectOption[0].options.value)
+      //   console.log(strUser);
+      // });
+      // selectOption.addEventListener("change", function () {
+      //   console.log(strUser);
+      // });
+    </script>
   </body>
 </html>

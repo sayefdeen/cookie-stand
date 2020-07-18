@@ -12,12 +12,52 @@
       <a href="sales.html">Sales</a>
     </div>
     <h1>Sales page of our cookie store</h1>
-    <div id="sales-container">
-      <div id="branch1" class="border"></div>
-      <div id="branch2" class="border"></div>
-      <div id="branch3" class="border"></div>
-      <div id="branch4" class="border"></div>
-      <div id="branch5" class="border"></div>
+    <div class="container">
+      <div id="sales-table"></div>
+      <div id="sales-form">
+        <form>
+          <fieldset>
+            <legend>Location Information</legend>
+            <label for="branch-name">Branch Name</label>
+            <input
+              type="text"
+              id="branch-name"
+              name="branch-name"
+              placeholder="Branch Name"
+              required
+              pattern="^[a-zA-Z ]*$"
+            />
+            <label for="max-number">Branch Max Sales : </label>
+            <input
+              type="text"
+              id="max-number"
+              name="max-number"
+              placeholder="Maximum sales if cookie"
+              required
+              pattern="\d*"
+            />
+            <label for="min-number">Branch Min Sales : </label>
+            <input
+              type="text"
+              id="min-number"
+              name="min-number"
+              placeholder="Minimun sales if cookie"
+              required
+              pattern="\d*"
+            />
+            <label for="average-number">Branch Average Sales : </label>
+            <input
+              type="text"
+              id="average-number"
+              name="average-number"
+              placeholder="Average sales if cookie"
+              required
+              pattern="[0-9]+([\.,][0-9]+)?"
+            />
+            <input type="submit" value="Add a branch" />
+          </fieldset>
+        </form>
+      </div>
     </div>
     <script src="sales.js"></script>
   </body>
